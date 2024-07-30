@@ -5,7 +5,7 @@ alert("All systems go!");
 alert("Let's start!");
 
 // First use of prompt, and template string addition
-const username = prompt("Hi there. What's your name?");
+let username = prompt("Hi there. What's your name?");
 username = username.trim();
 alert(`Hi ${username} --- Welcome to The Mars Adventure Game.`)
 alert("Yesterday, you received a call from your good friend at NASA")
@@ -60,6 +60,26 @@ companionType = firstLetterType + otherLettersType
 
 alert(`Cool, so you're bringing ${companionName} the ${companionType}`)
 
+alert(`You always need a backup. Just in case ${companionName} can't make it, you should have a second choice!
+`)
+let compTypeTwo = prompt("What kind of companion animal would you like for your second choice?")
+let compNameTwo = prompt("What is their name?")
+compNameTwo = compNameTwo.trim()
+let firstLetterNameTwo = compNameTwo[0]
+firstLetterNameTwo = firstLetterNameTwo.toUpperCase()
+let otherLettersNameTwo = compNameTwo.slice(1)
+otherLettersNameTwo = otherLettersNameTwo.toLowerCase()
+compNameTwo = firstLetterNameTwo + otherLettersNameTwo
+
+compTypeTwo = compTypeTwo.trim()
+let firstLetterTypeTwo = compTypeTwo[0]
+firstLetterTypeTwo = firstLetterTypeTwo.toUpperCase()
+let otherLettersTypeTwo = compTypeTwo.slice(1)
+otherLettersTypeTwo = otherLettersTypeTwo.toLowerCase()
+compTypeTwo = firstLetterTypeTwo + otherLettersTypeTwo
+
+alert(`You've elected to have ${compNameTwo} the ${compTypeTwo} as your second choice`)
+
 // // Companion Animal capitalization portion (DON'T INCLUDE)
 // let companionName = "Remmy"
 // let firstLetter = companionName[0]
@@ -77,7 +97,9 @@ let decorChoice = prompt(`You have a couple of options for the interior decor of
 A   Sleek, modern minimalism
 B   Retro/vintage space age
 C   Victorian-era steampunk
-Type in A, B or C
+D   Gothic/Baroque 
+E   Non-euclidean nightmare
+Type in A, B, C, D or E
 `);
 decorChoice = decorChoice.toUpperCase().trim();
 let decor;
@@ -87,10 +109,31 @@ if (decorChoice === "A") {
     decor = "Retro/vintage space age"
 } else if (decorChoice === "C") {
     decor = "Victorian steampunk"
+} else if (decorChoice === "D") {
+    decor = "Imposing Gothic/Baroque"
+} else if (decorChoice === "E") {
+    decor = "Reality-warping"
+}
+
+// Planet choice
+let planet = prompt("Which planet would you like to explore?")
+planet = planet.trim()
+let firstLetterPlanet = planet[0]
+firstLetterPlanet = firstLetterPlanet.toUpperCase()
+let otherLettersPlanet = planet.slice(1)
+otherLettersPlanet = otherLettersPlanet.toLowerCase()
+planet = firstLetterPlanet + otherLettersPlanet
+
+if (planet === "Saturn") {
+    alert("Sorry, the spaceship for Saturn left last week. You'll need to go to Mars")
+} else if (planet === "Venus") {
+    alert("It's not worth the trip, trust me. Mars is better this time of year")
+} else {
+    alert("Don't worry about it. Mars is far more interesting, trust me!")
 }
 
 // Bringing it all together
-alert(`${username} and ${companionName}, surfing the celestial abyss, in a ${decor} spaceship.`)
+alert(`${username} and ${companionName}, surfing the celestial abyss, in a ${decor} spaceship. ${compNameTwo} the ${compTypeTwo} watches from afar with a tear in their eye`)
 
 // Lift Off while loop
 const symbol = "."
@@ -98,7 +141,7 @@ let timer = 5;
 let biggerCount = 1;
 while (timer > 0) {
     alert(`${timer}${symbol.repeat(biggerCount)}`);
-    biggerCount ++
+    biggerCount += 2
     timer --
 }
 alert("*** LIFTOFF ***");
